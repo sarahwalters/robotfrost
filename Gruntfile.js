@@ -24,7 +24,7 @@ module.exports = function(grunt) {
     // For test running
     karma: {
       options: {
-        configFile: 'test.conf.js'
+        configFile: 'karma.conf.js'
       },
       unit: {
         singleRun: true,
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
     // For auto-restarting server on code change
     nodemon: {
       dev: {
-        script: 'app.js'
+        script: 'src/app.js'
       }
     },
 

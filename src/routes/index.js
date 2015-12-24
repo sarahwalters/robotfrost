@@ -11,4 +11,8 @@ routes.samplePost = function(req, res) {
   res.json({'message': 'Welcome!'});
 };
 
+routes.test = function() {
+  return true;
+};
+
 module.exports = routes;

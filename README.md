@@ -18,5 +18,6 @@ From working directory:
 * Handlebars templating
 * jslint error checker
 * Google-standard Javascript style checking
+* Jasmine test framework with node-style require statements
 * Karma test runner with PhantomJS
-* Nodemon filewatching
+* Grunt filewatching to run tasks on code change

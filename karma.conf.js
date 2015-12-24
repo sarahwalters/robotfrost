@@ -8,6 +8,7 @@ module.exports = function(config) {
     basePath: '',
 
     plugins: [
+      'karma-commonjs',
       'karma-jasmine',
       'karma-phantomjs-launcher',
       'karma-phantomjs2-launcher'
@@ -15,22 +16,30 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'commonjs'],
 
     // list of files / patterns to load in the browser
     files: [
-      'test/**/*Spec.js',
-      {pattern: 'src/routes/*.js', included: false},
-      {pattern: 'test/unit/*Spec.js', included: false}
+      'src/**/*.js',
+      'test/**/*Spec.js'
     ],
 
     // list of files to exclude
     exclude: [
+      'src/app.js',
+      'src/models/*.js', // requires mongoose dependency
+      'src/karma.conf.js'
     ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/**/*.js': ['commonjs'], // Remove coverage if you don't use karma-coverage
+      'test/**/*Spec.js': ['commonjs']
+    },
+
+    commonjsPreprocessor: {
+      modulesRoot: 'src'
     },
 
     // test results reporter to use

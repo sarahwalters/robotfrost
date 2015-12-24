@@ -1,1 +1,1 @@
-console.log('Hello world!');
+console.log('Logged from public/javascripts/main.js!');

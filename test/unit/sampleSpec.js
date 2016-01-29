@@ -1,5 +1,8 @@
+var test = require('utils/test');
+
 describe('A suite', function() {
   it('contains spec with an expectation', function() {
-    expect(true).toBe(true);
+    var out = test.test();
+    expect(out).toBe(true);
   });
 });

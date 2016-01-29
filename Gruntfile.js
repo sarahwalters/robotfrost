@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     // For error detection
     jshint: {
-      files: ['Gruntfile.js', '*.js', 'models/*.js', 'public/javascripts/*.js', 'routes/*.js', 'test/**/*.js'],
+      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
       options: {
         multistr: true,
         unused: true,
@@ -64,5 +64,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-concurrent');
 
   grunt.registerTask('build', ['jshint', 'jscs', 'karma:unit']);
-  grunt.registerTask('default', ['concurrent:target']);
+  grunt.registerTask('default', ['build', 'concurrent:target']);
 };
